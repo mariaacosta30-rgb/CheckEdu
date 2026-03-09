@@ -1,4 +1,4 @@
-// Função principal para adicionar a missão
+
 function addTask() {
     const input = document.getElementById('taskInput');
     const taskText = input.value;
@@ -18,9 +18,9 @@ function addTask() {
     `;
 
     li.onclick = function() {
-        this.classList.toggle('completed');
-    };
-
+       li.onclick = function() {
+    this.classList.toggle('completed');
+};
     taskList.appendChild(li);
 
     input.value = "";
