@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+body {
+    background-color: #0d0d0d; 
+    background-image: radial-gradient(circle, #1a1a2e 0%, #0d0d0d 100%);
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background: #16161a;
+    padding: 2.5rem;
+    border-radius: 5px;
+    border: 2px solid #00f2ff; 
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 0 10px #bc13fe, 0 0 20px #bc13fe; 
+    text-align: center;
+}
+
+header p {
+    text-align: center;
+    color: #00f2ff;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    background: #0f0f12;
+    border: 1px solid #333;
+    padding: 12px;
+    color: #00f2ff;
+    border-radius: 0; 
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #bc13fe;
+    box-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
+}
+
+button {
+    background: #bc13fe;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); 
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00f2ff;
+    color: #000;
+    box-shadow: 0 0 15px #00f2ff;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 4px solid #bc13fe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+li:hover {
+    background: rgba(0, 242, 255, 0.05);
+    border-left-color: #00f2ff;
+    transform: translateX(5px);
+}
+
+.delete-btn {
+    background: transparent;
+    border: 1px solid #ff4b2b;
+    color: #ff4b2b;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    clip-path: none;
+}
+
+.delete-btn:hover {
+    background: #ff4b2b;
+    color: white;
+    box-shadow: 0 0 10px #ff4b2b;
+}
+
+ul::-webkit-scrollbar {
+    width: 5px;
+}
+ul::-webkit-scrollbar-thumb {
+    background: #333;
+}
