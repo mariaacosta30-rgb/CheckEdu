@@ -1,46 +1,30 @@
 
 function addTask() {
     const input = document.getElementById('taskInput');
-    const taskText = input.value;
+    const taskText = input.value.trim();
 
-    if (taskText.trim() === "") {
-        alert("⚠️ ERRO DE SISTEMA: Digite uma tarefa primeiro!");
+    if (taskText === "") {
+        alert("Por favor, digite uma tarefa!");
         return;
     }
 
     const taskList = document.getElementById('taskList');
 
     const li = document.createElement('li');
-
+    
     li.innerHTML = `
-        <span class="task-text">${taskText}</span>
-        <button class="delete-btn" onclick="removeTask(event, this)">ABORTAR</button>
+        <span onclick="toggleTask(this)">${taskText}</span>
+        <span class="delete-btn" onclick="removeTask(this)">✖</span>
     `;
 
-    li.onclick = function() {
-       li.onclick = function() {
-    this.classList.toggle('completed');
-};
     taskList.appendChild(li);
-
+    
     input.value = "";
-    input.focus();
-}
-function removeTask(event, button) {
-    event.stopPropagation();
-    
-    const li = button.parentElement;
-    
-    li.style.opacity = "0";
-    li.style.transform = "translateX(20px)"; 
-    
-    setTimeout(() => {
-        li.remove();
-    }, 200);
 }
 
-document.getElementById('taskInput').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        addTask();
-    }
-});
+function toggleTask(element) {
+    element.parentElement.classList.toggle('completed');
+}
+function removeTask(element) {
+    element.parentElement.remove();
+}
