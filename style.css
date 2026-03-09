@@ -1,11 +1,9 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
-    background-color: #0d0d0d; 
-    background-image: radial-gradient(circle, #1a1a2e 0%, #0d0d0d 100%);
-    color: #e0e0e0;
-    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(circle, #1a1a2e 0%, #050505 100%);
+    color: #00f2ff;
+    font-family: 'Orbitron', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,118 +12,89 @@ body {
     overflow: hidden;
 }
 
+body::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+}
+
 .container {
-    background: #16161a;
+    background: rgba(22, 22, 26, 0.9);
     padding: 2.5rem;
-    border-radius: 5px;
-    border: 2px solid #00f2ff; 
-    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1);
+    border: 2px solid #bc13fe;
+    box-shadow: 0 0 15px #bc13fe, inset 0 0 10px #bc13fe;
     width: 100%;
     max-width: 450px;
+    z-index: 3;
     position: relative;
+    backdrop-filter: blur(5px);
 }
 
 header h1 {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin: 0;
-    color: #fff;
-    text-shadow: 0 0 10px #bc13fe, 0 0 20px #bc13fe; 
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
     text-align: center;
-}
-
-header p {
-    text-align: center;
-    color: #00f2ff;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-}
-
-.input-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
 }
 
 input {
-    flex: 1;
-    background: #0f0f12;
-    border: 1px solid #333;
+    background: #000;
+    border: 1px solid #00f2ff;
     padding: 12px;
     color: #00f2ff;
-    border-radius: 0; 
     outline: none;
-    transition: 0.3s;
-}
-
-input:focus {
-    border-color: #bc13fe;
-    box-shadow: 0 0 10px rgba(188, 19, 254, 0.5);
+    box-shadow: inset 0 0 5px #00f2ff;
 }
 
 button {
     background: #bc13fe;
-    color: white;
+    color: #fff;
     border: none;
     padding: 10px 20px;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
     cursor: pointer;
+    font-weight: bold;
     text-transform: uppercase;
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); 
     transition: 0.3s;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(188, 19, 254, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(188, 19, 254, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(188, 19, 254, 0); }
 }
 
 button:hover {
     background: #00f2ff;
     color: #000;
-    box-shadow: 0 0 15px #00f2ff;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    max-height: 300px;
-    overflow-y: auto;
+    animation: none;
+    box-shadow: 0 0 20px #00f2ff;
 }
 
 li {
-    background: rgba(255, 255, 255, 0.05);
-    margin-bottom: 10px;
-    padding: 15px;
-    border-left: 4px solid #bc13fe;
+    background: rgba(0, 242, 255, 0.05);
+    margin-top: 10px;
+    padding: 12px;
+    border-left: 5px solid #00f2ff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: 0.3s;
 }
 
-li:hover {
-    background: rgba(0, 242, 255, 0.05);
-    border-left-color: #00f2ff;
-    transform: translateX(5px);
+.completed {
+    text-decoration: line-through;
+    color: #555;
+    border-left-color: #555;
+    filter: grayscale(1);
 }
 
 .delete-btn {
     background: transparent;
-    border: 1px solid #ff4b2b;
-    color: #ff4b2b;
-    padding: 5px 10px;
-    font-size: 0.7rem;
-    clip-path: none;
-}
-
-.delete-btn:hover {
-    background: #ff4b2b;
-    color: white;
-    box-shadow: 0 0 10px #ff4b2b;
-}
-
-ul::-webkit-scrollbar {
-    width: 5px;
-}
-ul::-webkit-scrollbar-thumb {
-    background: #333;
+    border: 1px solid #ff0055;
+    color: #ff0055;
+    animation: none;
 }
